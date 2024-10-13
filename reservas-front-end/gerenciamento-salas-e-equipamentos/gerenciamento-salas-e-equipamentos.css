@@ -1,0 +1,41 @@
+.container {
+    max-width: 800px;
+    margin-top: 50px;
+}
+
+h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    margin-top: 20px;
+}
+
+hr {
+    margin: 40px 0;
+}
+
+form h4 {
+    margin-top: 40px;
+}
+
+input[type="number"] {
+    max-width: 200px;
+}
+
+button[type="submit"] {
+    width: 100%;
+}
+
+.alert {
+    margin-top: 20px;
+}

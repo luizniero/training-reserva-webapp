@@ -1,0 +1,35 @@
+.container {
+    max-width: 800px;
+    margin-top: 50px;
+}
+
+h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control[disabled] {
+    background-color: #f0f0f0;
+    color: #666;
+}
+
+#kit-multimidia input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#kit-multimidia {
+    margin-top: 10px;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.alert {
+    margin-top: 20px;
+}
