@@ -17,21 +17,23 @@ namespace SistemaReservasAPI.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             // Configurando a chave composta para ReservaKits (relacionamento muitos-para-muitos)
             modelBuilder.Entity<ReservaEquipamento>()
-                .HasKey(rk => new { rk.ReservaId, rk.EquipamentoId });
+                .HasKey(re => new { re.ReservaId, re.EquipamentoId });
 
             // Configuração do relacionamento Reserva -> ReservaKits
             modelBuilder.Entity<ReservaEquipamento>()
-                .HasOne(rk => rk.Reserva)
+                .HasOne(re => re.Reserva)
                 .WithMany(r => r.ReservaEquipamentos)
-                .HasForeignKey(rk => rk.ReservaId);
+                .HasForeignKey(re => re.ReservaId);
 
             // Configuração do relacionamento KitMultimidia -> ReservaKits
             modelBuilder.Entity<ReservaEquipamento>()
-                .HasOne(rk => rk.Equipamento)
+                .HasOne(re => re.Equipamento)
                 .WithMany(k => k.ReservaEquipamentos)
-                .HasForeignKey(rk => rk.ReservaId);
+                .HasForeignKey(re => re.ReservaId);
         }
     }
 

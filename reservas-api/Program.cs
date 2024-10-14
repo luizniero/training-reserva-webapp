@@ -9,7 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Adicionando o serviço do DbContext (use seu próprio nome de connection string)
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+    .UseLazyLoadingProxies()
+);
 
 
 // Adicionar autenticação com JWT
@@ -28,11 +30,25 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
     
+// Adicionar o serviço de CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
+
+
 // Adicionar controle de permissões
 builder.Services.AddAuthorization();
 
 // Adicionar os controladores da API
 builder.Services.AddControllers();
+
 
 
 // Add services to the container.
@@ -41,6 +57,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Usar o CORS com a política definida
+app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

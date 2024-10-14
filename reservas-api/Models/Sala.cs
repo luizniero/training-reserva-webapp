@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 namespace SistemaReservasAPI.Models
 {
     public class Sala
@@ -6,6 +7,7 @@ namespace SistemaReservasAPI.Models
         public string Nome { get; set; }
 
         // Relação com reservas
-        public ICollection<Reserva> Reservas { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<Reserva> Reservas { get; set; }
     }
 }

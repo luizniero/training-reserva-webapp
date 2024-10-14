@@ -1,6 +1,7 @@
-const API_URL = 'http://localhost:5000'; // URL da sua API
+const API_URL = 'http://localhost:5162/api'; // URL da sua API
 
 export const login = async (usuario, senha) => {
+    console.log(`estamos tentando fazer o login =). Usuario: ${usuario} senha: ${senha}`)
     try {
         const response = await fetch(`${API_URL}/login`, {
             method: 'POST',

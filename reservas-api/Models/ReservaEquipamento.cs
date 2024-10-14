@@ -10,4 +10,11 @@ namespace SistemaReservasAPI.Models
 
         public int Quantidade { get; set; } // Quantidade de kits reservados
     }
+
+    public class ReservaEquipamentoDTO
+    {
+        public int ReservaId { get; set; }
+        public int EquipamentoId { get; set; }
+        public int Quantidade { get; set; }
+    }
 }

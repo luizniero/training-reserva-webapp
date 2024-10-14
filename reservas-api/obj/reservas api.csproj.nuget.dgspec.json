@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\luiz_\\source\\repos\\Reservas\\reservas api\\reservas api.csproj": {}
+    "C:\\Users\\luiz_\\source\\repos\\Reservas\\reservas-api\\reservas api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\luiz_\\source\\repos\\Reservas\\reservas api\\reservas api.csproj": {
+    "C:\\Users\\luiz_\\source\\repos\\Reservas\\reservas-api\\reservas api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\luiz_\\source\\repos\\Reservas\\reservas api\\reservas api.csproj",
+        "projectUniqueName": "C:\\Users\\luiz_\\source\\repos\\Reservas\\reservas-api\\reservas api.csproj",
         "projectName": "reservas api",
-        "projectPath": "C:\\Users\\luiz_\\source\\repos\\Reservas\\reservas api\\reservas api.csproj",
+        "projectPath": "C:\\Users\\luiz_\\source\\repos\\Reservas\\reservas-api\\reservas api.csproj",
         "packagesPath": "C:\\Users\\luiz_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luiz_\\source\\repos\\Reservas\\reservas api\\obj\\",
+        "outputPath": "C:\\Users\\luiz_\\source\\repos\\Reservas\\reservas-api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -63,6 +63,16 @@
               "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[8.0.10, )"
             },

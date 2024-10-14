@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace SistemaReservasAPI.Models
 {
     public class Reserva
@@ -18,6 +20,19 @@ namespace SistemaReservasAPI.Models
         public string Status { get; set; } = "Ativa"; // Pode ser 'Ativa' ou 'Cancelada'
 
         // Relação com Equipamento (muitos-para-muitos)
-        public ICollection<ReservaEquipamento> ReservaEquipamentos { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<ReservaEquipamento> ReservaEquipamentos { get; set; }
     }
+
+    public class ReservaDTO
+    {
+        public int Id { get; set; }
+        public int UsuarioId { get; set; }
+        public string SalaNome { get; set; }
+        public DateTime Data { get; set; }
+        public string Horario { get; set; }
+        public string Status { get; set; }
+    }
+
+    
 }
